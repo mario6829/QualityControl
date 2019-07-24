@@ -69,9 +69,7 @@ void customize(std::vector<ConfigParamSpec>& workflowOptions)
 #include "QualityControl/InfrastructureGenerator.h"
 #include "QualityControl/runnerUtils.h"
 #include "QualityControl/ExamplePrinterSpec.h"
-#include "ITSBase/GeometryTGeo.h"
 #include "ITSRawWorkflow/RawPixelReaderSpec.h"
-#include "DetectorsCommonDataFormats/DetID.h"
 #include "DetectorsBase/GeometryManager.h"
 
 
