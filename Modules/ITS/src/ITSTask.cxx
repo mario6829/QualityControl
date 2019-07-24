@@ -27,7 +27,6 @@
 #include <TH1.h>
 #include <TH2.h>
 
-#include "QualityControl/FileFinish.h"
 #include "QualityControl/QcInfoLogger.h"
 #include "ITS/ITSTask.h"
 #include "ITS/ITSTaskVariables.h"
