@@ -37,7 +37,7 @@
 #include "Framework/DataProcessorSpec.h"
 #include "Framework/Task.h"
 #include "ITSMFTReconstruction/Clusterer.h"
-#include "uti.h"
+#include "ITSQCDataReaderWorkflow/RootInclude.h"
 
 #include "ITSBase/GeometryTGeo.h"
 #include "DetectorsBase/GeometryManager.h"
