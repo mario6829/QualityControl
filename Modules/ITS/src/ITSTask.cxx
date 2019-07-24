@@ -16,7 +16,6 @@
 #include <sstream>
 
 #include <TStopwatch.h>
-#include "DataFormatsParameters/GRPObject.h"
 #include "FairLogger.h"
 #include "FairRunAna.h"
 #include "FairFileSource.h"
@@ -31,6 +30,7 @@
 #include "QualityControl/FileFinish.h"
 #include "QualityControl/QcInfoLogger.h"
 #include "ITS/ITSTask.h"
+#include "ITS/ITSTaskVariables.h"
 #include "DetectorsBase/GeometryManager.h"
 #include "ITSBase/GeometryTGeo.h"
 #include "ITSMFTReconstruction/DigitPixelReader.h"
