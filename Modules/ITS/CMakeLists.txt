@@ -10,6 +10,8 @@ target_include_directories(
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
+include_directories(${O2_ROOT}/include/GPU)
+
 target_link_libraries(QcITS PUBLIC QualityControl)
 
 install(TARGETS QcITS
