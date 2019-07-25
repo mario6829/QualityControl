@@ -89,7 +89,7 @@ WorkflowSpec defineDataProcessing(const ConfigContext& config)
 		QcInfoLogger::GetInstance() << "START READER" << AliceO2::InfoLogger::InfoLogger::endm;
 
 
-	specs.emplace_back(o2::its::getRawPixelReaderSpec());
+	specs.emplace_back(o2::its::getTestDataReaderSpec());
 
   // Path to the config file
   std::string qcConfigurationSource = getConfigPath(config);
