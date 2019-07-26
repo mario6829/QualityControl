@@ -72,7 +72,6 @@ void customize(std::vector<ConfigParamSpec>& workflowOptions)
 #include "ITSQCDataReaderWorkflow/TestDataReader.h"
 #include "DetectorsBase/GeometryManager.h"
 
-
 std::string getConfigPath(const ConfigContext& config);
 
 using namespace o2::framework;
@@ -83,13 +82,11 @@ WorkflowSpec defineDataProcessing(const ConfigContext& config)
 {
   WorkflowSpec specs;
 
+  o2::base::GeometryManager::loadGeometry();
 
-	o2::base::GeometryManager::loadGeometry();
+  QcInfoLogger::GetInstance() << "START READER" << AliceO2::InfoLogger::InfoLogger::endm;
 
-		QcInfoLogger::GetInstance() << "START READER" << AliceO2::InfoLogger::InfoLogger::endm;
-
-
-	specs.emplace_back(o2::its::getTestDataReaderSpec());
+  specs.emplace_back(o2::its::getTestDataReaderSpec());
 
   // Path to the config file
   std::string qcConfigurationSource = getConfigPath(config);
@@ -100,7 +97,6 @@ WorkflowSpec defineDataProcessing(const ConfigContext& config)
 
   // Generation of the QC topology (one task, one checker in this case)
   quality_control::generateRemoteInfrastructure(specs, qcConfigurationSource);
-
 
   return specs;
 }
