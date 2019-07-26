@@ -45,10 +45,10 @@ namespace o2
 {
 namespace quality_control_modules
 {
-namespace simpleds
+namespace itstask
 {
 
-SimpleDS::SimpleDS() : TaskInterface()
+ITSTask::ITSTask() : TaskInterface()
 {
 
   o2::base::GeometryManager::loadGeometry();
@@ -209,13 +209,13 @@ SimpleDS::SimpleDS() : TaskInterface()
   //	FileNameInfo->SetStats(false);
 }
 
-SimpleDS::~SimpleDS()
+ITSTask::~ITSTask()
 {
 }
 
-void SimpleDS::initialize(o2::framework::InitContext& ctx)
+void ITSTask::initialize(o2::framework::InitContext& ctx)
 {
-  QcInfoLogger::GetInstance() << "initialize SimpleDS" << AliceO2::InfoLogger::InfoLogger::endm;
+  QcInfoLogger::GetInstance() << "initialize ITSTask" << AliceO2::InfoLogger::InfoLogger::endm;
 
   RunID = 0;
   FileID = 0;
@@ -401,17 +401,17 @@ void SimpleDS::initialize(o2::framework::InitContext& ctx)
   Yellowed = 0;
 }
 
-void SimpleDS::startOfActivity(Activity& activity)
+void ITSTask::startOfActivity(Activity& activity)
 {
   QcInfoLogger::GetInstance() << "startOfActivity" << AliceO2::InfoLogger::InfoLogger::endm;
 }
 
-void SimpleDS::startOfCycle()
+void ITSTask::startOfCycle()
 {
   QcInfoLogger::GetInstance() << "startOfCycle" << AliceO2::InfoLogger::InfoLogger::endm;
 }
 
-void SimpleDS::monitorData(o2::framework::ProcessingContext& ctx)
+void ITSTask::monitorData(o2::framework::ProcessingContext& ctx)
 {
 
   start = std::chrono::high_resolution_clock::now();
@@ -808,7 +808,7 @@ void SimpleDS::monitorData(o2::framework::ProcessingContext& ctx)
   }
 }
 
-void SimpleDS::ConfirmXAxis(TH1* h)
+void ITSTask::ConfirmXAxis(TH1* h)
 {
   // Remove the current axis
   h->GetXaxis()->SetLabelOffset(999);
@@ -828,7 +828,7 @@ void SimpleDS::ConfirmXAxis(TH1* h)
   newaxis->Draw();
   h->GetListOfFunctions()->Add(newaxis);
 }
-void SimpleDS::ReverseYAxis(TH1* h)
+void ITSTask::ReverseYAxis(TH1* h)
 {
   // Remove the current axis
   h->GetYaxis()->SetLabelOffset(999);
@@ -851,17 +851,17 @@ void SimpleDS::ReverseYAxis(TH1* h)
   h->GetListOfFunctions()->Add(newaxis);
 }
 
-void SimpleDS::endOfCycle()
+void ITSTask::endOfCycle()
 {
   QcInfoLogger::GetInstance() << "endOfCycle" << AliceO2::InfoLogger::InfoLogger::endm;
 }
 
-void SimpleDS::endOfActivity(Activity& activity)
+void ITSTask::endOfActivity(Activity& activity)
 {
   QcInfoLogger::GetInstance() << "endOfActivity" << AliceO2::InfoLogger::InfoLogger::endm;
 }
 
-void SimpleDS::reset()
+void ITSTask::reset()
 {
   // clean all the monitor objects here
   QcInfoLogger::GetInstance() << "Resetting the histogram" << AliceO2::InfoLogger::InfoLogger::endm;

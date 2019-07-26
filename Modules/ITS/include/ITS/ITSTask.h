@@ -51,14 +51,14 @@ namespace o2
 {
 namespace quality_control_modules
 {
-namespace simpleds
+namespace itstask
 {
 
 /// \brief Example Quality Control DPL Task
 /// It is final because there is no reason to derive from it. Just remove it if needed.
 /// \author Barthelemy von Haller
 /// \author Piotr Konopka
-class SimpleDS /*final*/ : public TaskInterface // todo add back the "final" when doxygen is fixed
+class ITSTask /*final*/ : public TaskInterface // todo add back the "final" when doxygen is fixed
 {
 
   using ChipPixelData = o2::itsmft::ChipPixelData;
@@ -66,9 +66,9 @@ class SimpleDS /*final*/ : public TaskInterface // todo add back the "final" whe
 
  public:
   /// \brief Constructor
-  SimpleDS();
+  ITSTask();
   /// Destructor
-  ~SimpleDS() override;
+  ~ITSTask() override;
 
   // Definition of the methods for the template method pattern
   void initialize(o2::framework::InitContext& ctx) override;
