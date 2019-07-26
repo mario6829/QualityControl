@@ -51,27 +51,27 @@
 		},
 		{
 			"binding": "in",
-			"dataOrigin": "TST",
+			"dataOrigin": "ITS",
 			"dataDescription": "TEST"
 		},
 		{
 			"binding": "Error",
-			"dataOrigin": "TST",
+			"dataOrigin": "ITS",
 			"dataDescription": "Error"
 		},
 		{
 			"binding": "Run",
-			"dataOrigin": "TST",
+			"dataOrigin": "ITS",
 			"dataDescription": "Run"
 		},
 		{
 			"binding": "File",
-			"dataOrigin": "TST",
+			"dataOrigin": "ITS",
 			"dataDescription": "File"
 		},
 		{
 			"binding": "Finish",
-			"dataOrigin": "TST",
+			"dataOrigin": "ITS",
 			"dataDescription": "Finish"
 		}
 		],
