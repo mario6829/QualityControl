@@ -25,7 +25,7 @@ namespace o2
 {
 namespace quality_control_modules
 {
-namespace simpleds
+namespace itstask
 {
 
 BOOST_AUTO_TEST_CASE(instantiate_task) { BOOST_CHECK(true); }

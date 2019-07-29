@@ -1,35 +1,35 @@
 # ---- Library ----
 
-add_library(QcITS src/ITSTask.cxx)
+add_library(QcITSTask src/ITSTask.cxx)
 
-target_sources(QcITS PRIVATE)
+target_sources(QcITSTask PRIVATE)
 
 target_include_directories(
-  QcITS
+  QcITSTask
   PUBLIC $<INSTALL_INTERFACE:include>
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 include_directories(${O2_ROOT}/include/GPU)
 
-target_link_libraries(QcITS PUBLIC QualityControl)
+target_link_libraries(QcITSTask PUBLIC QualityControl)
 
-install(TARGETS QcITS
+install(TARGETS QcITSTask
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 # ---- ROOT dictionary ----
 
-add_root_dictionary(QcITS
+add_root_dictionary(QcITSTask
                     HEADERS include/ITS/ITSTask.h
                     LINKDEF include/ITS/LinkDef.h
-                    BASENAME QcITS)
+                    BASENAME QcITSTask)
 
 # ---- Test(s) ----
 
 add_executable(testQcITS test/testITS.cxx)
-target_link_libraries(testQcITS PRIVATE QcITS Boost::unit_test_framework O2::ITSMFTReconstruction O2::ITSBase O2::DetectorsBase)
+target_link_libraries(testQcITS PRIVATE QcITSTask Boost::unit_test_framework O2::ITSMFTReconstruction O2::ITSBase O2::DetectorsBase QualityControl)
 add_test(NAME testQcITS COMMAND testQcITS)
 set_tests_properties(testQcITS PROPERTIES TIMEOUT 60)
 install(
